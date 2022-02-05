@@ -1,0 +1,35 @@
+#view-only-card {
+  margin: 20px 0;
+}
+
+#view-only-card .title {
+  background: linear-gradient(96.46deg, #5F6DFF 3.72%, #3178C6 31.05%, #FCCD9D 49.85%, #FCAE56 68.54%, #FCAE56 100%);
+  border-radius: 15px 15px 0 0;
+  height: 50px;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+#view-only-card .title .span {
+  display: block;
+}
+
+#view-only-card .code {
+  padding-left: 30px;
+  background: #F0F2F3;
+  color: #000;
+  border-radius: 0px 0px 15px 15px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+#view-only-card .code pre {
+  background: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+}

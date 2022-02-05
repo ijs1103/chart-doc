@@ -1,0 +1,13 @@
+@import '../../scss/variables.scss';
+
+#contents-container {
+  padding: 30px 70px;
+  border-left: 1px solid map-get($color, main-line);
+  >div {
+    position: relative;
+    h2 {
+      padding-bottom: 15px;
+      border-bottom: 1px solid map-get($color, main-line);
+    }
+  }
+}

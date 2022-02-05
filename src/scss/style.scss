@@ -1,0 +1,198 @@
+@import 'custom-reset';
+@import 'variables';
+@import '../components/headers/Header.scss';
+@import '../pages/charts/Chart.scss';
+@import '../pages/docs/Docs.scss';
+@import '../pages/examples/Examples.scss';
+@import '../pages/homes/Home.scss';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', serif;
+  color: map-get($color, base-fc);
+}
+
+@media (min-width: 650px) and (max-width: 1020px) {
+
+  // Example - grid width
+  .charts {
+    width: 650px;
+  }
+
+  // Chart - chart,copyboard width
+  .chart,
+  .copyBoard {
+    width: 450px;
+    margin: 0 auto;
+  }
+  .docs-aside {
+    font-size: 18px !important;
+    ul {
+      padding-left: 0;
+      li {
+        padding: 15px 10px 5px 10px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 649px) {
+  #root {
+    @include mobile-home;
+    @include mobile-header;
+
+    // Example - grid width
+    .charts {
+      width: 310px;
+    }
+
+    // Chart - chart,copyboard width 
+    .chart,
+    .copyBoard {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    // Chart - 모바일 레이아웃 
+    #chart-main {
+      >div {
+        width: 100%;
+
+        #contents-container {
+          width: 100%;
+          padding: 0;
+
+          >div {
+            width: 100%;
+            padding: 0 20px;
+
+            h2 {
+              padding: 15px 20px;
+              font-size: 24px;
+            }
+          }
+        }
+      }
+
+      .chart-aside {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        transition: all .35s;
+        transform: translateX(0%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        min-width: 150px;
+        height: 100%;
+        background-color: #eee;
+        z-index: 2;
+
+        &.mobile-aside-on {
+          transition: all .35s;
+          transform: translateX(-200%);
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 40%;
+          min-width: 150px;
+          height: 100%;
+          background-color: white;
+          z-index: 2;
+        }
+      }
+
+      .mobile-chart-menu {
+        display: block;
+      }
+    }
+
+    // Docs - 모바일 레이아웃 
+    #docs-main {
+
+      #contents-container {
+        width: 100%;
+        padding: 0;
+
+        >div {
+          width: 100%;
+          padding: 0 20px;
+
+          h2 {
+            padding: 15px 20px;
+            font-size: 24px;
+          }
+        }
+      }
+
+      .docs-aside {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        transition: all .35s;
+        transform: translateX(0%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        min-width: 150px;
+        height: 100%;
+        background-color: #eee;
+        z-index: 2;
+        ul{
+          padding-left: 0;
+          li{
+            border-left: 0;
+            padding: 20px;
+            color: #000;
+            &.current{
+              background-color: map-get($color, nav-select-bgc);
+              color: #fff;
+            }
+            &.hover{
+              background-color: map-get($color, nav-hover-bgc);
+            }
+            .link{
+              font-size: 24px;
+            }
+          }
+        }
+        &.mobile-aside-on {
+          transition: all .35s;
+          transform: translateX(-200%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40%;
+          min-width: 150px;
+          height: 100%;
+          background-color: white;
+          z-index: 2;
+        }
+      }
+
+      .mobile-chart-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  #root {
+    @include mobile-header;
+
+    #examples-main {
+      h2 {
+        font-size: 22px;
+      }
+
+      .colored {
+        height: 120px;
+      }
+    }
+  }
+}

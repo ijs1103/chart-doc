@@ -1,0 +1,173 @@
+@import '../../scss/variables.scss';
+
+// 데스크탑 Chart
+a {
+  display: block;
+}
+
+#chart-main {
+  max-width: $nav-length;
+  margin: 0 auto;
+  display: flex;
+  padding-top: $nav-height;
+  > div {
+    width: 80%;
+    .mobile-chart-menu {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 25px;
+      right: 30px;
+    
+      span {
+        display: block;
+        background-color: map-get($color, nav-mobile-bgc);
+        width: 25px;
+        height: 4px;
+        border-radius: 4px;
+        transition: .5s;
+      }
+    
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+        transition-delay: .125s;
+      }
+    
+      span:nth-child(2) {
+        opacity: 0;
+      }
+    
+      span:nth-child(3) {
+        transform: translateY(-3px) rotate(315deg);
+        transition-delay: .25s;
+      }
+    
+      &.on {
+        span:nth-child(1) {
+          transform: translateY(-6px);
+        }
+    
+        span:nth-child(2) {
+          opacity: 1;
+        }
+    
+        span:nth-child(3) {
+          transform: translateY(6px);
+        }
+      }
+    }
+  }
+  .chart-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 30px 0;
+    
+    .chart {
+      @extend %card;
+      height: 400px;
+      padding: 20px;
+    }
+    
+    .copyBoard {
+      @extend %card;
+      text-overflow: ellipsis;
+      height: 280px;
+      
+      .copyBoard-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        
+        .copy-icon {
+          color: #50d457;
+          top: 10px;
+          right: 20px;
+          position: absolute;
+          cursor: pointer;
+          @include button-active-effect;
+        }
+        .copied {
+          color: #50d457;
+          cursor: pointer;
+          top: 17px;
+          right: 20px;
+          position: absolute;
+          font-size: 13px;
+        }
+        
+        .code {
+          border-radius: 0 0 8px 8px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: none;
+          width: 100%;
+          height: 230px;
+          background-color: #f0f2f3;
+          pre{
+            height: inherit;
+            background-color: inherit;
+            padding: 30px;
+          }
+        }
+      }
+    }
+    
+  }
+  
+}
+
+.chart-aside {
+  width: 20%;
+  margin-top: 103px;
+  .items {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    .item {
+      font-size: 24px;
+      
+      a {
+        padding: 10px;
+        text-decoration: none;
+        
+        &.focused {
+          background-color: map-get($color, nav-select-bgc);
+          color: #fff;
+        }
+        
+        img {
+          font-size: 30px;
+          float: right;
+        }
+      }
+      
+      .sub-items {
+        font-size: 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: .5s;
+        
+        &:target {
+          max-height: 400px;
+          @at-root.chart-aside{
+          }
+        }
+        
+        a {
+          &:hover {
+            background-color: map-get($color, hover);
+          }
+          
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding-left: 30px;
+        }
+      }
+    }
+    
+  }
+}

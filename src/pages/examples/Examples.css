@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
+/* Nav bar Height */
+/* Fonts */
+body {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Lato';
+  font-size: 64px;
+  line-height: 1.5em;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 48px;
+}
+
+h3 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 26px;
+}
+
+h4 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 22px;
+}
+
+h5 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 20px;
+}
+
+h6 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 18px;
+}
+
+p {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  letter-spacing: 0.5px;
+}
+
+/* Colors */
+/* Shadow */
+/* card */
+/* button active effect*/
+#examples-main > article section {
+  padding-top: 80px;
+  height: calc((200 / 1024) * 100vh);
+  background-color: #8fb3ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#examples-main > article section h2 {
+  color: #fff;
+}
+
+#examples-main > article .charts {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-gap: 30px;
+}
+
+#examples-main > article .charts div {
+  border-radius: 8px;
+  width: 310px;
+  height: 340px;
+  background-color: transparent;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.35);
+  transition: transform .5s;
+}
+
+#examples-main > article .charts div .chartInner {
+  overflow: hidden;
+}

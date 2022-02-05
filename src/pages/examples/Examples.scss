@@ -1,0 +1,41 @@
+@import '../../scss/variables.scss';
+// 데스크탑 Examples
+#examples-main {
+	>article {
+		section {
+			padding-top: $nav-height;
+			height: calc((200 / 1024) * 100vh);
+			background-color: map-get($color, nav-bgc);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			h2 {
+				color: #fff;
+			}
+		}
+
+		.charts {
+			max-width: 1020px;
+			margin: 0 auto;
+			padding: 50px 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+			grid-gap: 30px;
+			
+			div {
+				// &:hover{
+				// 	transform: translateY(-15px);
+				// }
+				.chartInner{
+					overflow: hidden;
+				}
+				border-radius: 8px;
+				width: 310px;
+				height: 340px;
+				background-color: transparent;
+				box-shadow: $box-shadow-strong;
+				transition: transform .5s;
+			}
+		}
+	}
+}

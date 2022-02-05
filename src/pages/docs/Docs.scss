@@ -1,0 +1,76 @@
+@import '../../scss/variables.scss';
+#docs-main {
+	max-width: $nav-length;
+	margin: 0 auto;
+	display: flex;
+	padding-top: $nav-height;
+	.docs-aside {
+		width: 20%;
+		margin-top: 103px;
+    font-size: 24px;
+		ul{
+			padding-left: 20px;
+			li{
+				border-left: 4px solid #bfbfbf;
+				padding: 30px 20px 10px 40px;
+				color: #808080;
+				&.current{
+					color: #000;
+					border-left: 4px solid map-get($color, nav-mobile-bgc);
+				}
+				.link{
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	#contents-container {
+    width: 80%;
+    .mobile-chart-menu {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    
+      span {
+        display: block;
+        background-color: map-get($color, nav-mobile-bgc);
+        width: 30px;
+        height: 4px;
+        border-radius: 4px;
+        transition: .5s;
+      }
+    
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+        transition-delay: .125s;
+      }
+    
+      span:nth-child(2) {
+        opacity: 0;
+      }
+    
+      span:nth-child(3) {
+        transform: translateY(-3px) rotate(315deg);
+        transition-delay: .25s;
+      }
+    
+      &.on {
+        span:nth-child(1) {
+          transform: translateY(-6px);
+        }
+    
+        span:nth-child(2) {
+          opacity: 1;
+        }
+    
+        span:nth-child(3) {
+          transform: translateY(6px);
+        }
+      }
+    }
+  }
+
+}

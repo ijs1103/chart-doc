@@ -1,0 +1,176 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
+/* Nav bar Height */
+/* Fonts */
+body {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Lato';
+  font-size: 64px;
+  line-height: 1.5em;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 48px;
+}
+
+h3 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 26px;
+}
+
+h4 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 22px;
+}
+
+h5 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 20px;
+}
+
+h6 {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  line-height: 1.2em;
+  font-size: 18px;
+}
+
+p {
+  font-weight: 300;
+  font-family: "Inter", "Lato", sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  letter-spacing: 0.5px;
+}
+
+/* Colors */
+/* Shadow */
+/* card */
+/* button active effect*/
+header {
+  width: 100%;
+  background-color: #8fb3ff;
+  height: 80px;
+  position: fixed;
+  z-index: 9999;
+}
+
+header .nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 20px;
+}
+
+header .nav-inner .logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+header .nav-inner .logo > i {
+  font-size: 2.25em;
+}
+
+header .nav-inner > ul {
+  display: flex;
+  padding-left: 85px;
+}
+
+header .nav-inner > ul li {
+  list-style: none;
+  padding: 20px;
+}
+
+header .nav-inner > ul li .link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.125em;
+}
+
+header .nav-inner > ul li .link.current {
+  color: #f1c571;
+}
+
+header .nav-inner > ul li .link:hover {
+  color: #f1c571;
+}
+
+header .nav-inner .btn_download {
+  font-weight: 500;
+  font-family: "Inter", "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  color: #fffaf9;
+  width: 154px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(70px);
+  border-radius: 20px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+header .nav-inner .btn_download:active {
+  opacity: .65;
+  box-shadow: none;
+}
+
+/*모바일 사이드 메뉴*/
+/* 모바일 헤더 활성화시 */
+/* 모바일 헤더 비활성화시 */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 20px;
+  background-color: #8fb3ff;
+}
+
+.mobile-nav .current-menu {
+  display: inline-block;
+  color: #f1c571;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.mobile-nav div > i {
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.mobile-nav div > i:active {
+  opacity: .65;
+  box-shadow: none;
+}
+
+.mobile-aside-modal-bg {
+  display: none;
+}
+
+.mobile-aside {
+  display: none;
+}

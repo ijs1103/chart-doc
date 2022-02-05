@@ -1,0 +1,152 @@
+@import '../../scss/variables.scss';
+@mixin header {
+  width: 100%;
+  background-color: map-get($color, nav-bgc);
+  height: $nav-height;
+  position: fixed;
+  z-index: 9999;
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $nav-length;
+    padding: 20px;
+
+    .logo {
+      color: #fff;
+      cursor: pointer;
+
+      >i {
+        font-size: 2.25em;
+      }
+    }
+
+    >ul {
+      display: flex;
+      padding-left: 85px;
+
+      li {
+        list-style: none;
+        padding: 20px;
+
+        .link {
+          text-decoration: none;
+          color: #fff;
+          font-size: 1.125em;
+          &.current{
+            color: map-get($color, focus);
+          }
+          &:hover {
+            color: map-get($color, focus);
+          }
+        }
+      }
+    }
+
+    .btn_download {
+      @include button;
+      @include button-active-effect;
+      width: 154px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(70px);
+      border-radius: 20px;
+      border: none;
+      filter: drop-shadow($box-shadow);
+    }
+  }
+}
+// 데스크탑 Header
+header {
+	@include header;
+}
+/*모바일 사이드 메뉴*/
+@mixin mobile-side-menu{
+	/* 백그라운드 */
+  .mobile-aside-modal-bg{
+    z-index: 1;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(0,0,0,.5);
+    animation: d .5s;
+  }
+  .mobile-aside {
+    display: block;
+    transform: translateX(-200%);
+    transition: all .35s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    min-width: 125px;
+    height: 100%;
+    background-color: map-get($color, nav-mobile-bgc);
+    z-index: 4;
+    ul {
+      li {
+        border-bottom: 1px solid #fff;
+        padding: 20px 10px 20px 40px;
+        a {
+          color: #fff;
+          font-size: 1.25em;
+          &:hover {
+            color: map-get($color, focus);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &.on {
+      transform: translateX(0);
+    }
+  }
+}
+/* 모바일 헤더 활성화시 */
+@mixin mobile-header {
+  .mobile-nav {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    z-index: 2;
+  }
+  @include mobile-side-menu;
+}
+/* 모바일 헤더 비활성화시 */
+.mobile-nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $mobile-nav-height;
+	padding: 10px 20px;
+	background-color: map-get($color, nav-bgc);
+	.current-menu{
+		display: inline-block;
+		color: map-get($color, focus);
+		font-size: 18px;
+    font-weight: 800;
+	}
+	div>i {
+		color: #fff;
+		cursor: pointer;
+		font-size: 1.5em;
+		@include button-active-effect
+	}
+}
+.mobile-aside-modal-bg {
+	display: none;
+}
+.mobile-aside {
+	display: none;
+}
